@@ -1,13 +1,14 @@
 import React, {useContext} from 'react' //Type in 'rafce'
-import {taskListContext} from '../context/TaskListContext'
+import {TaskListContext} from '../context/TaskListContext'
+import Task from './Task'
 
 const TaskList = () => {
-    const { tasks } = useContext(taskListContext)
+    const { state } = useContext(TaskListContext)
     return (
         <div>
             <ul className='list'>
-                {tasks.map((task) => {
-                    return
+                {state.tasks.map((taskys) => {
+                    return <Task tasky={taskys} />
                 })}
             </ul>
         </div>
